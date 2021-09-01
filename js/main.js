@@ -16,7 +16,7 @@ const loadBookData = () =>{
     // clear input field
     inputField.value = ''
     // load data from Book Archive API
-    const url = ` http://openlibrary.org/search.json?q=${inputText}`
+    const url = ` https://openlibrary.org/search.json?q=${inputText}`
     fetch(url)
         .then(res => res.json())
         .then(data => displayResult(data))
