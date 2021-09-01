@@ -3,7 +3,6 @@ const loadBookData = () =>{
     const inputField = document.getElementById('input-field')
     const inputText = inputField.value
     
-
     // Input text validation 
     const errorMg = document.getElementById('input-empty')
     if(inputText===''){
@@ -28,7 +27,7 @@ const displayResult = (data) =>{
     const totalResultNumber = document.getElementById('total-result')
     totalResultNumber.innerText = totalResult
 
-    // No result found error messege
+    // No result found error message
     const errorMg = document.getElementById('error-noResult')
     if(!totalResult){
         errorMg.innerText = 'No Result Found!'
