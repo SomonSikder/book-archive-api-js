@@ -11,20 +11,20 @@
       integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
       crossorigin="anonymous"
     />
-    <title>Assignment-6</title>
+    <title>Book Archive</title>
   </head>
   <body>
     <div class="bg-info">
-      <h2 class="text-center text-white py-3">Assignment-6</h2>
+      <h2 class="text-center text-white py-3">Book Archive</h2>
     </div>
-
+    <!-- Search Field -->
     <div class="w-50 mx-auto">
       <div class="input-group mb-3 w-50 mx-auto">
         <input
           id="input-field"
           type="text"
           class="form-control"
-          placeholder="Recipient's username"
+          placeholder="Search Book"
           aria-label="Recipient's username"
           aria-describedby="button-addon2"
         />
@@ -37,9 +37,17 @@
           Search
         </button>
       </div>
+      <p class="text-center">
+        Total result Found: <span id="total-result"></span>
+      </p>
     </div>
 
-    <h2 id="a" class="text-center"></h2>
+    <!-- Result display section -->
+    <div id="search-result" class="row mx-auto container"></div>
+    <div class="text-center">
+      <p id="error-mg"></p>
+    </div>
+
     <!-- JavaScript File Link -->
     <script src="js/main.js"></script>
   </body>
