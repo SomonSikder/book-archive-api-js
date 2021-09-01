@@ -2,14 +2,19 @@
 const loadBookData = () =>{
     const inputField = document.getElementById('input-field')
     const inputText = inputField.value
-    if(inputText.length === ''){
-        const error = document.getElementById('error-mg')
-        error.innerText = 'Please Type Something For Search!'
-        return 
+    
+
+    // Input text validation 
+    const errorMg = document.getElementById('input-empty')
+    if(inputText===''){
+        errorMg.innerText = 'Please type something for search!'
+        return
     }
+    else{
+        errorMg.innerText = ''
+    } 
     // clear input field
     inputField.value = ''
-
     // load data from Book Archive API
     const url = ` http://openlibrary.org/search.json?q=${inputText}`
     fetch(url)
@@ -18,11 +23,27 @@ const loadBookData = () =>{
 }
 
 const displayResult = (data) =>{
+    // Total search result
+    const totalResult = data.numFound
     const totalResultNumber = document.getElementById('total-result')
+    totalResultNumber.innerText = totalResult
+
+    // No result found error messege
+    const errorMg = document.getElementById('error-noResult')
+    if(!totalResult){
+        errorMg.innerText = 'No Result Found!'
+    }
+    else{
+        errorMg.innerText = ''
+    }
+
+    // result display container
     const bookContainer = document.getElementById('search-result')
+
     // clear Pervious result
-    bookContainer.innerHTML = ''
-    totalResultNumber.innerText = data.numFound
+    bookContainer.textContent = ''
+
+    // I want to show Only 12 result From Total result
     const books = data.docs.slice(0,12)
     books.forEach(book => {
         const img = `https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`
