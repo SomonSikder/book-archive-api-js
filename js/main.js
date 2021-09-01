@@ -55,7 +55,7 @@ const displayResult = (data) =>{
                 <div class="card-body">
                     <h5 class="card-title">Book Title: ${book.title}</h5>
                     <p class="card-text">Author Name: ${book.author_name}</p>
-                    <p class="card-text">Publisher Name: ${book.publisher}</p>
+                    <p class="card-text">Publisher Name: ${book.publisher.slice(0,3)}</p>
                     <p class="card-text">First Publish Year: ${book.first_publish_year}</p>
                 </div>
             </div>
